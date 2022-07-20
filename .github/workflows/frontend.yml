@@ -18,7 +18,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Echo build environment vars
         uses: ./.github/actions/echo
-        
+        with:
+          APP_NAME: ${{ env.APP_NAME }}
+
 #   echo_acceptance:
 #     runs-on: ubuntu-latest
 #     environment: acceptance
