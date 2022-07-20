@@ -20,6 +20,7 @@ jobs:
         uses: ./.github/actions/echo
         with:
           APP_NAME: ${{ env.APP_NAME }}
+          env_input: ${{ env }}
 
 #   echo_acceptance:
 #     runs-on: ubuntu-latest
