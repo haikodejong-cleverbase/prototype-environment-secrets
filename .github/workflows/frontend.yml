@@ -21,9 +21,13 @@ jobs:
     - name: Echo build environment vars
       run: |
         echo $(git branch --show-current | sed "s#.*/##g")
+        echo "See https://docs.github.com/en/actions/learn-github-actions/contexts#env-context"
         echo $PULL_REQUEST
         echo $GITHUB_ENV
-        jq -r 'to_entries|map("\(.key)=\(.value|tostring)")|.[]' ${{ env }}
+        echo "repository ${{ env.repository }}"
+        echo "ref ${{ env.ref }}"
+        echo "job ${{ env.job }}"
+        echo "job ${{ env.job }}"
 
 # LAB_IMAGE_NAME1="$LAB_AWS_ECR_REPO/signing-portal:$RELEASE_ID"
 # if [ "$PULL_REQUEST" = "000" ]; then
