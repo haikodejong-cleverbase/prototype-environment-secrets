@@ -23,6 +23,7 @@ jobs:
         echo $(git branch --show-current | sed "s#.*/##g")
         echo $PULL_REQUEST
         echo $GITHUB_ENV
+        echo ${{ env }}
 
 # LAB_IMAGE_NAME1="$LAB_AWS_ECR_REPO/signing-portal:$RELEASE_ID"
 # if [ "$PULL_REQUEST" = "000" ]; then
