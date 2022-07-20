@@ -5,6 +5,7 @@ on:
     paths:
       - 'frontend/**'
       - '.github/workflows/frontend.yml'
+      - '.github/actions/**'
 
 env:
   APP_NAME: frontend-application
