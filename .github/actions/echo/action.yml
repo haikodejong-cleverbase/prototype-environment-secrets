@@ -4,9 +4,14 @@ inputs:
     description: "Foo secret"
     default: default_for_foo
     required: false
-run: |
-  echo 'Environment ENV_FOO =  ${{ inputs.foo }}'  
-  echo $(git branch --show-current)
-  echo $(git branch --show-current | sed "s#.*/##g")
-  echo 'repository ${{ github.repository }}'
-  echo 'repository_owner ${{ github.repository_owner }}'
+runs:
+  using: "composite"
+  steps:
+    - name: 'Echo vars'
+      shell: bash
+      run: |
+        echo 'Environment ENV_FOO =  ${{ inputs.foo }}'  
+        echo $(git branch --show-current)
+        echo $(git branch --show-current | sed "s#.*/##g")
+        echo 'repository ${{ github.repository }}'
+        echo 'repository_owner ${{ github.repository_owner }}'
