@@ -1,17 +1,7 @@
 name: 'Echo ENVs'
-inputs:
-  APP_NAME:
-    required: true
-    type: string
 run: |
+  echo 'Environment ENV_FOO =  ${{ secrets.ENV_FOO }}'  
   echo $(git branch --show-current)
   echo $(git branch --show-current | sed "s#.*/##g")
-  echo "See https://docs.github.com/en/actions/learn-github-actions/contexts#env-context"
-  echo $PULL_REQUEST
-  echo $GITHUB_ENV
-#   echo 'APP_NAME ${{ inputs.APP_NAME }}'
   echo 'repository ${{ github.repository }}'
   echo 'repository_owner ${{ github.repository_owner }}'
-  echo 'ref ${{ github.ref }}'
-  echo 'job ${{ github.job }}'
-  echo 'Environment ENV_FOO =  ${{ secret.ENV_FOO }}'

@@ -24,6 +24,8 @@ jobs:
           echo $(git branch --show-current | sed "s#.*/##g")
           echo 'repository ${{ github.repository }}'
           echo 'repository_owner ${{ github.repository_owner }}'
+      - name: Check out this repo
+        uses: ./.github/actions/echo
 
 #   echo_acceptance:
 #     runs-on: ubuntu-latest
