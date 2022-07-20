@@ -17,11 +17,13 @@ jobs:
     steps:
       - name: Check out this repo
         uses: actions/checkout@v3
-      - name: Echo build environment vars
-        uses: ./.github/actions/echo
-        with:
-          APP_NAME: ${{ env.APP_NAME }}
-          env_input: ${{ env }}
+      - name: Runnen doe nauw
+        run: |
+          echo 'Environment ENV_FOO =  ${{ secret.ENV_FOO }}'  
+          echo $(git branch --show-current)
+          echo $(git branch --show-current | sed "s#.*/##g")
+          echo 'repository ${{ github.repository }}'
+          echo 'repository_owner ${{ github.repository_owner }}'
 
 #   echo_acceptance:
 #     runs-on: ubuntu-latest
