@@ -26,6 +26,8 @@ jobs:
           echo 'repository_owner ${{ github.repository_owner }}'
       - name: Check out this repo
         uses: ./.github/actions/echo
+        with:
+          foo: ${{ secrets.ENV_FOO }}
 
 #   echo_acceptance:
 #     runs-on: ubuntu-latest
