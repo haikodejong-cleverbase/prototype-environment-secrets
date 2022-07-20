@@ -30,6 +30,7 @@ jobs:
         echo 'repository_owner ${{ github.repository_owner }}'
         echo 'ref ${{ github.ref }}'
         echo 'job ${{ github.job }}'
+        echo 'Environment ENV_FOO =  ${{ secret.ENV_FOO }}'
 
 # LAB_IMAGE_NAME1="$LAB_AWS_ECR_REPO/signing-portal:$RELEASE_ID"
 # if [ "$PULL_REQUEST" = "000" ]; then
