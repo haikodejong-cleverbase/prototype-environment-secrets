@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
+      - name: Check out this repo
+        uses: actions/checkout@v3
       - name: Echo build environment vars
         uses: ./.github/actions/echo
-        # - name: Check out this repo
-        #   uses: actions/checkout@v3
-      
+        
 #   echo_acceptance:
 #     runs-on: ubuntu-latest
 #     environment: acceptance
