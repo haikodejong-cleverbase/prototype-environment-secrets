@@ -14,34 +14,31 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-    - name: Check out this repo
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-
-    - name: Echo build environment vars
-      uses: ./.github/actions/echo
+      - name: Echo build environment vars
+        uses: ./.github/actions/echo
+        # - name: Check out this repo
+        #   uses: actions/checkout@v3
       
-  echo_acceptance:
-    runs-on: ubuntu-latest
-    environment: acceptance
-    steps:
-    - name: Check out this repo
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
+#   echo_acceptance:
+#     runs-on: ubuntu-latest
+#     environment: acceptance
+#     steps:
+#     - name: Check out this repo
+#       uses: actions/checkout@v3
+#       with:
+#         fetch-depth: 0
 
-    - name: Echo build environment vars
-      uses: ./.github/actions/echo
+#     - name: Echo build environment vars
+#       uses: ./.github/actions/echo
 
-  echo_test:
-    runs-on: ubuntu-latest
-    environment: test
-    steps:
-    - name: Check out this repo
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
+#   echo_test:
+#     runs-on: ubuntu-latest
+#     environment: test
+#     steps:
+#     - name: Check out this repo
+#       uses: actions/checkout@v3
+#       with:
+#         fetch-depth: 0
 
-    - name: Echo build environment vars
-      uses: .github/actions/echo
+#     - name: Echo build environment vars
+#       uses: .github/actions/echo
