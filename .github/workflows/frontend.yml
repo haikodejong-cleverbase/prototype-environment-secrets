@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'frontend/**'
-      - '.github/workflows/frontend-signature-portal.yml'
+      - '.github/workflows/frontend.yml'
 
 env:
   APP_NAME: frontend-application
