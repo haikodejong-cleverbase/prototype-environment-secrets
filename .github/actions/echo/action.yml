@@ -9,7 +9,7 @@ run: |
   echo "See https://docs.github.com/en/actions/learn-github-actions/contexts#env-context"
   echo $PULL_REQUEST
   echo $GITHUB_ENV
-  echo 'APP_NAME ${{ APP_NAME }}'
+  echo 'APP_NAME ${{ inputs.APP_NAME }}'
   echo 'repository ${{ github.repository }}'
   echo 'repository_owner ${{ github.repository_owner }}'
   echo 'ref ${{ github.ref }}'
