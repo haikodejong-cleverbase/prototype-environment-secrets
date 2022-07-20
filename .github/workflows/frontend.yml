@@ -32,16 +32,16 @@ jobs:
         fetch-depth: 0
 
     - name: Echo build environment vars
-      uses: haikodejong-cleverbase/prototype-environment-secrets/.github/actions/echo
+      uses: './.github/actions/echo'
 
   echo_test:
     runs-on: ubuntu-latest
     environment: test
     steps:
     - name: Check out this repo
-      uses: haikodejong-cleverbase/prototype-environment-secrets/.github/actions/checkout@v2
+      uses: 'haikodejong-cleverbase/prototype-environment-secrets/.github/actions/checkout@v2'
       with:
         fetch-depth: 0
 
     - name: Echo build environment vars
-      uses: haikodejong-cleverbase/prototype-environment-secrets/.github/actions/echo
+      uses: 'haikodejong-cleverbase/prototype-environment-secrets/.github/actions/echo'
