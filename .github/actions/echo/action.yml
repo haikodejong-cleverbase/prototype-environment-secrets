@@ -4,13 +4,18 @@ inputs:
     description: "Foo secret"
     default: default_for_foo
     required: false
+  value:
+    description: 'Other value'
+    default: This_is_the_default
+    required: false
 runs:
   using: "composite"
   steps:
     - name: 'Echo vars'
       shell: bash
       run: |
-        echo 'Environment ENV_FOO =  ${{ inputs.foo }}'  
+        echo 'From action/echo ENV_FOO =  ${{ inputs.foo }}'  
+        echo 'From action/echo value=${{ inputs.value }}'  
         echo $(git branch --show-current)
         echo $(git branch --show-current | sed "s#.*/##g")
         echo 'repository ${{ github.repository }}'

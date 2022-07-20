@@ -17,38 +17,28 @@ jobs:
     steps:
       - name: Check out this repo
         uses: actions/checkout@v3
-      - name: Runnen doe nauw
-        run: |
-          echo 'Environment ENV_FOO =  ${{ secrets.ENV_FOO }}'  
-          echo $(git branch --show-current)
-          echo $(git branch --show-current | sed "s#.*/##g")
-          echo 'repository ${{ github.repository }}'
-          echo 'repository_owner ${{ github.repository_owner }}'
+      - name: Check out this repo
+        uses: ./.github/actions/echo
+        with:
+          foo: ${{ secrets.ENV_FOO }}
+  echo_acceptance:
+    runs-on: ubuntu-latest
+    environment: acceptance
+    steps:
+      - name: Check out this repo
+        uses: actions/checkout@v3
+      - name: Check out this repo
+        uses: ./.github/actions/echo
+        with:
+          foo: ${{ secrets.ENV_FOO }}
+  echo_test:
+    runs-on: ubuntu-latest
+    environment: test
+    steps:
+      - name: Check out this repo
+        uses: actions/checkout@v3
       - name: Check out this repo
         uses: ./.github/actions/echo
         with:
           foo: ${{ secrets.ENV_FOO }}
 
-#   echo_acceptance:
-#     runs-on: ubuntu-latest
-#     environment: acceptance
-#     steps:
-#     - name: Check out this repo
-#       uses: actions/checkout@v3
-#       with:
-#         fetch-depth: 0
-
-#     - name: Echo build environment vars
-#       uses: ./.github/actions/echo
-
-#   echo_test:
-#     runs-on: ubuntu-latest
-#     environment: test
-#     steps:
-#     - name: Check out this repo
-#       uses: actions/checkout@v3
-#       with:
-#         fetch-depth: 0
-
-#     - name: Echo build environment vars
-#       uses: .github/actions/echo
