@@ -10,7 +10,7 @@ env:
   APP_NAME: frontend-application
   
 jobs:
-  EchoEnvironment:
+  echo_environment:
     runs-on: ubuntu-latest
     steps:
     - name: Check out this repo
@@ -24,10 +24,10 @@ jobs:
         echo "See https://docs.github.com/en/actions/learn-github-actions/contexts#env-context"
         echo $PULL_REQUEST
         echo $GITHUB_ENV
-        echo "repository ${{ env.repository }}"
-        echo "ref ${{ env.ref }}"
-        echo "job ${{ env.job }}"
-        echo "job ${{ env.job }}"
+        echo 'APP_NAME ${{ env.APP_NAME }}'
+        echo 'repository ${{ env.repository }}'
+        echo 'ref ${{ env.ref }}'
+        echo 'job ${{ env.job }}'
 
 # LAB_IMAGE_NAME1="$LAB_AWS_ECR_REPO/signing-portal:$RELEASE_ID"
 # if [ "$PULL_REQUEST" = "000" ]; then
