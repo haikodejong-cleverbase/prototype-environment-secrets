@@ -39,9 +39,9 @@ jobs:
     environment: test
     steps:
     - name: Check out this repo
-      uses: ./.github/actions/checkout@v2
+      uses: .github/actions/checkout@v2
       with:
         fetch-depth: 0
 
     - name: Echo build environment vars
-      uses: ./.github/actions/echo
+      uses: https://github.com/haikodejong-cleverbase/prototype-environment-secrets/.github/actions/echo
